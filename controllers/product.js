@@ -3,9 +3,6 @@ const mongoose = require('mongoose');
 const Product = require('../models/product');
 const logger = require('../services/logger');
 
-const defaultImgUrl =
-  'https://upload.wikimedia.org/wikipedia/commons/1/14/Product_sample_icon_picture.png';
-
 const getRating = (reviews) =>
   reviews?.length > 0
     ? (

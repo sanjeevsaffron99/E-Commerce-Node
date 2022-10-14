@@ -8,8 +8,6 @@ const {
   forgotPassword,
 } = require('../controllers/user');
 
-const addressRoutes = require('./address');
-
 const { decode } = require('../middlewares/decodeToken');
 
 const router = express.Router();
@@ -20,7 +18,5 @@ router.put('/updatePassword', decode, updatePassword);
 router.get('/verifyToken', verifyTokenExpired);
 router.get('/balance', decode, getBalance);
 router.put('/forgotPassword', forgotPassword);
-
-router.use('/address', decode, addressRoutes);
 
 module.exports = router;

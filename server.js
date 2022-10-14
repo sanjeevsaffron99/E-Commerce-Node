@@ -8,11 +8,6 @@ const { decode } = require('./middlewares/decodeToken');
 
 const userRoutes = require('./routes/user');
 const productRoutes = require('./routes/product');
-const giftCardRoutes = require('./routes/giftCard');
-const bankAccountRoutes = require('./routes/bankAccount');
-const creditCardRoutes = require('./routes/creditCard');
-const imagesRoutes = require('./routes/images');
-const orderRoutes = require('./routes/order');
 
 const app = express();
 
@@ -28,11 +23,6 @@ const startServer = async () => {
 
     app.use('/user', userRoutes);
     app.use('/product', productRoutes);
-    app.use('/giftCard', giftCardRoutes);
-    app.use('/bankAccount', bankAccountRoutes);
-    app.use('/creditCard', creditCardRoutes);
-    app.use('/images', imagesRoutes);
-    app.use('/order', decode, orderRoutes);
 
     app.listen(port, () => {
       logger.info(`Server is running on port: ${port}`);
